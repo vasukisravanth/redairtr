@@ -2,8 +2,6 @@
 const express=require('express');
 const mongoose=require('mongoose');
 
-const routerflight= require("./routes/flight");
-const routeruser=require("./routes/user");
 
 const app=express();
 
@@ -24,8 +22,12 @@ mongoose.connect(dburi,connectionParams).then(()=>{
 
 app.use(express.json());
 
-app.use(routerflight);
-app.use(routeruser);
+// app.use(routerflight);
+// app.use(routeruser);
+// app.use(routerreservation);
+// app.use(routerpassenger);
+
+app.use('/', require('./routes'));
 
 app.use((err,req,res,next)=>{
     const errorStatus=err.status || 500
