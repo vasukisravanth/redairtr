@@ -35,12 +35,12 @@ router.put('/:id', (req, res) => {
 router.get('/specific',async (req,res)=>{
   try{
     const {
-      From, To
+      From, To,dateo
      } = req.body;
 
      console.log(req.body);
 
-     const flights = await Flight.findOne({ From: From,To:To });
+     const flights = await Flight.findOne({ From: From,To:To,dept:dateo });
 
      console.log(flights);
 

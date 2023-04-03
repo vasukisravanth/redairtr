@@ -21,21 +21,26 @@ const flightSchema = new mongoose.Schema(
 		required:true
 	},
 	"arrival":{
-		type:Date,
+		type: Date,
 		required:true
 	},
 	"dept":{
 		type:Date,
 		required:true
 	},
-	
+	"seatstotal":{
+		type:Number,
+		required:true,
+		
+	},
 	"seatsAvailable":{
 		type:Number,
-		required:true
+		required:true,
+		default:180
 	},
-	"economyPrice":{
-		type:Number,
-		required:true
+	"BookedSeats":{
+		type : Array ,
+		 "default" : []
 	},
 	"BusinessPrice":{
 		type:Number,
